@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Candlepage</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<body style="font:16px/1.6 system-ui;max-width:560px;margin:40px auto;padding:0 16px;background:#17171c;color:#eee">
+<style>a.r{display:block;margin:8px 0;padding:12px 14px;border-radius:10px;background:#26262e;color:#fff;text-decoration:none}a.r:hover{background:#33333d}h1{font-size:22px}small{color:#aaa}</style>
+<div id="en"><h1>Sorry to see Candlepage go</h1>
+<p>What went wrong? One tap opens a short email you can send (or skip it, nothing is sent from this page).</p>
+<div class="list" data-l="en"></div></div>
+<hr style="border-color:#333;margin:28px 0">
+<div id="he" dir="rtl"><h1>חבל שהלכת</h1>
+<p>מה לא עבד? לחיצה אחת פותחת מייל קצר שאפשר לשלוח (או לדלג, שום דבר לא נשלח מהדף הזה).</p>
+<div class="list" data-l="he"></div></div>
+<p><small>This page collects nothing. / הדף הזה לא אוסף שום מידע.</small></p>
+<script>
+var T={en:['Colours looked wrong','A PDF did not open','Too slow or heavy','Missing a feature','I do not need it any more','Something else'],he:['הצבעים נראו לא נכון','קובץ PDF לא נפתח','איטי או כבד','חסרה לי תכונה','כבר לא צריך','משהו אחר']};
+var v=(location.search.match(/v=([\d.]+)/)||[])[1]||'';
+document.querySelectorAll('.list').forEach(function(box){var l=box.dataset.l;T[l].forEach(function(t,i){var a=document.createElement('a');a.className='r';a.textContent=t;a.href='mailto:ben.meitav.work@gmail.com?subject='+encodeURIComponent('Candlepage uninstall '+v+': '+T.en[i])+'&body='+encodeURIComponent((l==='he'?'אשמח לפרט: ':'More details (optional): ')+'\n');box.appendChild(a)})});
+if(!/^he|^iw/i.test(navigator.language||'')){document.getElementById('he').style.display='none';document.querySelector('hr').style.display='none'}else{document.getElementById('en').style.display='none';document.querySelector('hr').style.display='none'}
+</script></body></html>
